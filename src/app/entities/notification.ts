@@ -1,5 +1,5 @@
+import { Replace } from '@helpers/Replace';
 import { randomUUID } from 'crypto';
-import { Replace } from 'src/helpers/Replace';
 import { Content } from './content';
 
 interface INotificationProps {
