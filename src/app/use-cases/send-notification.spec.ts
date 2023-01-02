@@ -1,25 +1,19 @@
 import { randomUUID } from 'crypto';
-import { Notification } from '../entities/notification';
+import { InMemoryNotificationsRepository } from '../../../test/repositories/in-memory-notifications-repository';
 import { SendNotification } from './send-notification';
-
-const notifications: Notification[] = [];
-
-const notificationsRepository = {
-  async create(notification: Notification) {
-    notifications.push(notification);
-  },
-};
 
 describe('Send notifications', () => {
   it('should be able to send notification', async () => {
+    const notificationsRepository = new InMemoryNotificationsRepository();
     const sendNotification = new SendNotification(notificationsRepository);
 
-    await sendNotification.execute({
+    const { notification } = await sendNotification.execute({
       category: 'social',
       content: 'You received a new Like',
       recipientId: randomUUID(),
     });
 
-    expect(notifications).toHaveLength(1);
+    expect(notificationsRepository.notifications).toHaveLength(1);
+    expect(notificationsRepository.notifications[0]).toEqual(notification);
   });
 });
