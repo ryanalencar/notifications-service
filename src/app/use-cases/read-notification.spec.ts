@@ -4,7 +4,7 @@ import { NotificationNotFound } from './errors/notification-not-found';
 import { ReadNotification } from './read-notification';
 
 describe('Read notifications', () => {
-  it('should be able to red notification', async () => {
+  it('should be able to read notification', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const readNotification = new ReadNotification(notificationsRepository);
 
@@ -19,7 +19,7 @@ describe('Read notifications', () => {
     );
   });
 
-  it('should not be able to red a non-existing notification', async () => {
+  it('should not be able to read a non-existing notification', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const readNotification = new ReadNotification(notificationsRepository);
 
