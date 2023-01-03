@@ -24,7 +24,7 @@ describe('Cancel notifications', () => {
     const cancelNotification = new CancelNotification(notificationsRepository);
 
     expect(() => {
-      cancelNotification.execute({
+      return cancelNotification.execute({
         notificationId: 'fake-notification-id',
       });
     }).rejects.toThrow(NotificationNotFound);
