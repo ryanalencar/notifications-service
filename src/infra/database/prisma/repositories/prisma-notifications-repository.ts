@@ -8,6 +8,10 @@ import { PrismaService } from '../prisma.service';
 export class PrismaNotificationsRepository implements NotificationsRepository {
   constructor(private prismaService: PrismaService) { }
 
+  async findManyByRecipientId(recipientId: string): Promise<Notification[]> {
+    throw new Error('Method not implemented.');
+  }
+
   async countManyByRecipientId(recipientId: string): Promise<number> {
     const recipientNotificationsCount =
       await this.prismaService.notification.count({
@@ -17,10 +21,6 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   }
 
   async findById(notificationId: string): Promise<Notification | null> {
-    // const notification = await this.prismaService.notification.findUnique({
-    //   where: { id: notificationId },
-    // });
-    // return notification || null;
     throw new Error('Method not implemented.');
   }
 

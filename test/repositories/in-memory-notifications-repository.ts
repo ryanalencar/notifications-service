@@ -16,7 +16,10 @@ export class InMemoryNotificationsRepository
     const notification = this.notifications.find(
       (notification) => notification.id === notificationId,
     );
-    return notification || null;
+
+    if (!notification) return null;
+
+    return notification;
   }
 
   async create(notification: Notification): Promise<void> {
