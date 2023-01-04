@@ -13,6 +13,13 @@
 
 ### 🏠 [Homepage](https://github.com/ryanalencar/notifications-service#readme)
 
+## Technologies
+  - NodeJs
+  - NestJs
+  - Prisma
+  - Typescript
+  - Jest
+
 ## Install
 
 ```sh
