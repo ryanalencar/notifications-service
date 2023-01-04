@@ -1,8 +1,16 @@
 {
   "name": "notifications-service",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Notification microservice built with NestJs",
+  "author": "Ryan Alencar",
+  "homepage": "https://github.com/ryanalencar/notifications-service#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanalencar/notifications-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanalencar/notifications-service/issues"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
